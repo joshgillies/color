@@ -279,6 +279,12 @@ it('Clone', function() {
   deepEqual(clone.rgbaArray(), [10, 20, 30, 1]);
 });
 
+it('Clone doesn\'t clone - #67', function() {
+  var c1 = new Color();
+  var c2 = c1.clone();
+  deepEqual(c1, c2);
+});
+
 it('Level', function() {
   equal(Color("white").level(Color("black")), "AAA");
   equal(Color("grey").level(Color("black")), "AA");
